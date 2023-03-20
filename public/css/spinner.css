@@ -1,0 +1,94 @@
+/* Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx */
+/* https://codepen.io/tbrownvisuals/pen/qBpdgLK */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+   background: radial-gradient(rgba(20, 20, 20, 0.8), rgba(0, 0, 0, 0.8));
+
+  background: -webkit-radial-gradient(
+    rgba(20, 20, 20, 0.8),
+    rgba(0, 0, 0, 0.8)
+  );
+  display: flex;
+   height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  border-radius: 100px;
+}
+.hide{
+  display: none;
+}
+.loader:after {
+  border-radius: 100px;
+  content: "";
+  position: absolute;
+  background-color: #33ea18;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  right: 360px;
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-easing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.loader.bar-two:after {
+  background-color: #00C5F3;
+  animation-name: slideOpp;
+  animation-duration: 4.3s;
+  amination-delay: .6s;
+  animation-easing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+  0% {
+    right: 360px;
+    left: 2px;
+  }
+  5% {
+    left: 2px;
+  }
+  50% {
+    right: 2px;
+    left: 360px;
+  }
+  55% {
+    right: 2px;
+  }
+  100% {
+    right: 360px;
+    left: 2px;
+  }
+}
+@keyframes slideOpp {
+  0% {
+    left: 360px;
+    right: 2px;
+  }
+  5% {
+    right: 2px;
+  }
+  50% {
+    left: 2px;
+    right: 360px;
+  }
+  55% {
+    left: 2px;
+  }
+  100% {
+    left: 360px;
+    right: 2px;
+  }
+}
